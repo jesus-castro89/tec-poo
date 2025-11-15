@@ -1,5 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
+  ssr: true, // Esto es true por defecto, pero para SSG es necesario
+  // Configura la base URL para GitHub Pages
+  app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/tec-poo/' : '/',
+    buildAssetsDir: 'assets'
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
