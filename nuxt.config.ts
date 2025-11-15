@@ -1,11 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
-  ssr: true, // Esto es true por defecto, pero para SSG es necesario
-  // Configura la base URL para GitHub Pages
+  ssr: false,
+
   app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/tec-poo/' : '/',
-    buildAssetsDir: 'assets'
+    baseURL: '/tec-poo/',
+    buildAssetsDir: '/assets/'
+  },
+
+  routeRules: {
+    // Configura todas las rutas para SPA
+    '/**': {
+      ssr: false
+    }
   },
 
   modules: [
@@ -36,6 +43,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
 
   nitro: {
+    preset: 'github-pages',
     prerender: {
       routes: [
         '/'
@@ -71,14 +79,14 @@ export default defineNuxtConfig({
         title: 'Getting Started',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
+          {field: 'path', operator: 'LIKE', value: '/getting-started%'}
         ]
       },
       {
         title: 'Essentials',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
+          {field: 'path', operator: 'LIKE', value: '/essentials%'}
         ]
       }
     ]

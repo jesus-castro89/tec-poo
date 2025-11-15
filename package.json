@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "generate": "nuxt generate",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "predeploy": "npm run generate",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.73",
@@ -25,6 +28,7 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.10.0",
     "eslint": "^9.39.1",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.1.3"
   },
