@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     buildAssetsDir: '/assets/'
   },
 
+  // Desactivar og-image
+  ogImage: {
+    enabled: false
+  },
+
   routeRules: {
     // Configura todas las rutas para SPA
     '/**': {
