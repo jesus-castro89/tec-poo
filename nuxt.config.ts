@@ -1,23 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
-  ssr: false,
-
   app: {
     baseURL: '/tec-poo/',
     buildAssetsDir: '/assets/'
-  },
-
-  // Desactivar og-image
-  ogImage: {
-    enabled: false
-  },
-
-  routeRules: {
-    // Configura todas las rutas para SPA
-    '/**': {
-      ssr: false
-    }
   },
 
   modules: [
@@ -84,14 +69,14 @@ export default defineNuxtConfig({
         title: 'Getting Started',
         contentCollection: 'docs',
         contentFilters: [
-          {field: 'path', operator: 'LIKE', value: '/getting-started%'}
+          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
         ]
       },
       {
         title: 'Essentials',
         contentCollection: 'docs',
         contentFilters: [
-          {field: 'path', operator: 'LIKE', value: '/essentials%'}
+          { field: 'path', operator: 'LIKE', value: '/essentials%' }
         ]
       }
     ]
